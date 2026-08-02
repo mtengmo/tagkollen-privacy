@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tågkollen — Support Development</title>
+<style>
+  :root {
+    --bg: #F4F6F7;
+    --surface: #FFFFFF;
+    --text: #1B2430;
+    --text-muted: #55606E;
+    --accent: #0C5C8A;
+    --accent-soft: #E4EEF3;
+    --rule: #D8DEE3;
+    --stamp-bg: #FBEFD9;
+    --stamp-text: #7A5B12;
+    --code-bg: #EEF2F4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F1720;
+      --surface: #16202B;
+      --text: #E7ECF0;
+      --text-muted: #9AA7B4;
+      --accent: #59B0DE;
+      --accent-soft: #1C313E;
+      --rule: #263341;
+      --stamp-bg: #2E2712;
+      --stamp-text: #E3C776;
+      --code-bg: #1C2733;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-bottom: 2.25rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .wordmark {
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    text-wrap: balance;
+  }
+
+  .wordmark .dot {
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .lede {
+    font-size: 1.08rem;
+    color: var(--text);
+    max-width: 60ch;
+  }
+
+  p { margin: 0 0 1em; }
+  p:last-child { margin-bottom: 0; }
+
+  .donate-card {
+    margin-top: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .donate-card .eyebrow {
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .swish-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    background: var(--accent);
+    color: var(--surface);
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.85em 1.4em;
+    border-radius: 8px;
+    transition: opacity 0.15s ease;
+  }
+
+  .swish-button:hover,
+  .swish-button:focus-visible {
+    opacity: 0.88;
+  }
+
+  .swish-number {
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .amount-note {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  a.back-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+
+  a.back-link:hover,
+  a.back-link:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 2.75rem 1.25rem 4rem; }
+    .wordmark { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <div class="subtitle">Stöd utvecklingen · Support Development</div>
+    <div class="wordmark">Tågkollen<span class="dot">.</span></div>
+    <p class="lede">
+      Tågkollen is free, ad-free, and built in spare time. If it's saved you a
+      few missed trains, you're welcome to buy the developer a beer — entirely
+      optional, and not required to use the app.
+    </p>
+  </div>
+
+  <div class="donate-card">
+    <span class="eyebrow">Via Swish</span>
+    <a class="swish-button" href="swish://payment?data=%7B%22version%22%3A1%2C%22payee%22%3A%7B%22value%22%3A%2246708372039%22%2C%22editable%22%3Afalse%7D%2C%22amount%22%3A%7B%22value%22%3A%22%22%2C%22editable%22%3Atrue%7D%2C%22message%22%3A%7B%22value%22%3A%22Tack%20for%20Tagkollen%21%22%2C%22editable%22%3Atrue%7D%7D">
+      Open Swish
+    </a>
+    <span class="swish-number">070-837 20 39</span>
+    <p class="amount-note">
+      No suggested amount — Swish will ask you to enter whatever you'd like to
+      send.
+    </p>
+  </div>
+
+  <p style="margin-top: 2.5rem;">
+    <a class="back-link" href="index.html">← Back to the privacy policy</a>
+  </p>
+
+  <footer>
+    Tågkollen is an independent, non-commercial project and is not affiliated
+    with or endorsed by Trafikverket or Garmin. Donations are voluntary tips,
+    not payment for any service or feature.
+  </footer>
+
+</div>
+</body>
+</html>
