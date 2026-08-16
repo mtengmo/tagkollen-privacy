@@ -259,7 +259,7 @@
     <div class="wordmark">RailCheck Sweden<span class="dot">.</span></div>
     <div class="meta-row">
       <span class="stamp">EFFECTIVE <b>2026-08-16</b></span>
-      <span class="stamp">VERSION <b>1.9.0</b></span>
+      <span class="stamp">VERSION <b>1.10.0</b></span>
     </div>
     <p class="lede">
       RailCheck Sweden is a Garmin Connect IQ watch app that shows live Swedish train
@@ -300,9 +300,11 @@
           </tr>
           <tr>
             <td><span class="field">Communications</span></td>
-            <td>Sending your coordinates or a chosen station code to
-              Trafikverket's open data API, to fetch real departure times.
-              No name, email, or device identifier is ever included.</td>
+            <td>Mainly sending your coordinates or a chosen station code to
+              Trafikverket's open data API, to fetch real departure times —
+              no name, email, or device identifier is ever included. Also
+              used for a small amount of anonymous usage tracking; see "Who
+              else sees anything," below, for exactly what that sends.</td>
           </tr>
           <tr>
             <td><span class="field">Background</span></td>
@@ -319,9 +321,9 @@
       </table>
     </div>
     <p>
-      None of this is collected, logged, or transmitted anywhere other than
-      the single Trafikverket API call needed to answer "what's the next
-      train?" — described in the next section.
+      None of this is collected or logged anywhere the developer controls —
+      it's sent directly from your watch to the two destinations described
+      in "Who else sees anything," below.
     </p>
   </section>
 
@@ -350,7 +352,7 @@
       <h2>Who else sees anything</h2>
     </div>
     <p>
-      Only <a href="https://www.trafikverket.se/" target="_blank" rel="noopener">Trafikverket</a>
+      <a href="https://www.trafikverket.se/" target="_blank" rel="noopener">Trafikverket</a>
       (the Swedish Transport Administration), whose public open-data API this
       app queries to get real departure information. Their API receives
       geographic coordinates or a station code and an API key identifying the
@@ -359,8 +361,21 @@
       how they handle API traffic.
     </p>
     <p>
-      There are no analytics, no advertising, no crash-reporting services, and
-      no data brokers of any kind built into this app.
+      The app also sends a small amount of anonymous usage data to
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google
+      Analytics</a> (the same GA4 property this website itself uses — see "This
+      website," below):
+      a random identifier generated on your watch and stored only there, when the
+      app is opened (which mode you're using, the app version) and when you switch
+      between the main screens (which screen). This is aggregate "how many people
+      use which feature" counting, not tracking of who you are — no name, email,
+      GPS coordinates, station choice, or device identifier is ever included, and
+      the random identifier isn't linked to anything else Google or the developer
+      holds about you.
+    </p>
+    <p>
+      There is no advertising, no crash-reporting service, and no data broker of
+      any kind built into this app.
     </p>
   </section>
 
@@ -395,13 +410,15 @@
       <h2>This website</h2>
     </div>
     <p>
-      Everything above describes the <strong>watch app</strong>, which has no analytics of
-      any kind. This <strong>website</strong> — the page you're reading now, and the
-      <a href="donate.html">donation page</a> — is a separate thing, and does use
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google
+      Everything above the previous section describes the <strong>watch app</strong>,
+      including its own small Google Analytics usage (section 04). This
+      <strong>website</strong> — the page you're reading now, and the
+      <a href="donate.html">donation page</a> — is a separate thing, and separately
+      uses <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google
       Analytics</a> to see aggregate traffic like page views and rough visitor counts.
-      It doesn't know who you are, and nothing it collects here ever reaches the app or
-      your watch — the two aren't connected.
+      Both the app and this website report to the same underlying GA4 property, but
+      with independent, unlinked identifiers — visiting this website reveals nothing
+      about whether or how you use the app, and vice versa.
     </p>
   </section>
 
